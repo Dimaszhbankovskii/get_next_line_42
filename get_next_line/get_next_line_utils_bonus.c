@@ -1,5 +1,12 @@
 #include "get_next_line_bonus.h"
 
+char	*ft_free_buffer(char *buffer)
+{
+	free(buffer);
+	buffer = NULL;
+	return (buffer);
+}
+
 size_t	ft_strlen(char const *str)
 {
 	size_t	i;

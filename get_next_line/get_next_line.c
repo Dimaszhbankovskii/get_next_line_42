@@ -108,14 +108,11 @@ char	*get_next_line(int fd)
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
 		if (read_bytes < 0)
-		{
-			free(buffer);
-			return (NULL);
-		}
+			return (ft_free_buffer(buffer));
 		buffer[read_bytes] = '\0';
 		str = ft_strjoin(str, buffer);
 	}
-	free(buffer);
+	buffer = ft_free_buffer(buffer);
 	line = ft_make_line(str);
 	str = ft_save_str(str);
 	return (line);
